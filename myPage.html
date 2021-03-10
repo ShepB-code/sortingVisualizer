@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        #toolBar {
+            width: 100%;
+            height: 10%;
+            display: inline-block;
+            background-color: blue;
+        }
+
+        #arrayBase {
+            width: 100%;
+            height: 150px;
+            background-color: blue;
+        }
+        #arrayBody {
+            width: 100%;
+            height: 70%;
+            display: inline-block;
+            text-align: center;
+            background-color: white;
+        }
+
+        #counter {
+            font-size: small;
+            display: inline-block;
+            color: white;
+        }
+        .sortingButtons {
+            color: white;
+            background-color: blue;
+            font-size: 16px;
+            font-family: monospace;
+            display: inline-block;
+            margin-left: 15px;
+            margin-right: 15px;
+            cursor: pointer;
+        
+        }
+
+    
+        .sortingButtons:hover {
+            color: orange;
+        }
+
+        .arrayItem {
+            width: 2px;
+            margin-top: 6px;
+            margin-right: 1px;
+            margin-left: 1px;
+            display: inline-block;
+            background-color: orange;
+        }
+
+        .arrayItem:hover {
+            background-color: green;
+        }
+
+        .seperator {
+            width: 5px;
+            height: 35px;
+            background-color: rgba(0, 0, 0, 0.8);
+            margin-left: 15px;
+            margin-right: 15px;
+            display: inline-block;
+        }
+    </style>
+
+      
+</head>
+
+<body>
+    <div id=toolBar>
+        <button class="sortingButtons" onclick="randomizeCurrent()">Randomize Array</button>
+        <div class="seperator"></div>
+        <button class="sortingButtons" onclick="startselectionSort()">Selection</button>
+        <button class="sortingButtons" onclick="startinsertionSort()">Insertion Sort</button>
+        <button class="sortingButtons" onclick="startmergeSort()">Merge Sort</button>
+        <div class="seperator"></div>
+        <button class="sortingButtons" onclick="updateArraySize()">Create Array</button>
+        <input id="arraySize">
+        
+    </div>
+    <div id=arrayBody>
+        <div class=arrayItem></div>
+        
+    </div>
+    <div id=arrayBase>
+        <p style="color: azure;">https://github.com/Kethantummala/Sorting_Visualizer</p>
+        <div id="counter">Comparison Count = 0</div>
+    </div>
+    
+    
+    
+
+
+    <script src="./scripts/main.js"></script>
+    <script src="./scripts/selectionSort.js"></script>
+    <script src="./scripts/visualizer.js"></script>
+    <script src="./scripts/insertionSort.js"></script>
+    <script src="./scripts/mergeSort.js"></script>
+</body>
