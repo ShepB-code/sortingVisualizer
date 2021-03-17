@@ -1,4 +1,4 @@
-//var delayTime=10000/(Math.floor(divs.length/10)*20);        //Decrease numerator to increase speed.
+var delayTime=10000/(Math.floor(divs.length/10)*250);        //Decrease numerator to increase speed.
 
 //var delayTime = 1;
 var c_delay = 0;

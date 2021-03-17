@@ -1,7 +1,7 @@
 function startinsertionSort () {
     insertionSort();
-    console.log(confirmSort(div_sizes));
-
+    arrayFinisher();
+    c_delay = 0;
 }
 
 function insertionSort () {
@@ -41,6 +41,5 @@ function insertionSort () {
     }
     div_update(divs[i-1],div_sizes[i-1],"green");//Color update
 
-    arrayFinisher();
 
 }

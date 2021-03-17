@@ -3,6 +3,7 @@ const MIN = 5;
 var delayTime = 1;
 var divs = [];
 var div_sizes = [];
+var animations = [];
 var comparisonCount = 0;
 
 
@@ -24,6 +25,7 @@ function generateArray (arraySize) {
         divs[i].style = "height: " + randomNum + "px;"
         container.appendChild(divs[i]);
     }
+    delayTime=10000/(Math.floor(divs.length/10)*250);   
     console.log(document.getElementById("counter").textContent)
 }
 

@@ -1,7 +1,8 @@
 function startselectionSort () {
     selectionSort();
-    console.log(confirmSort(div_sizes));
-
+    arrayFinisher();
+    c_delay = 0;
+    
 }
 
 function selectionSort () {
@@ -37,7 +38,7 @@ function selectionSort () {
     }
     div_update(divs[i],div_sizes[i],"green");//Color update
 
-    arrayFinisher();
+    
 
 }
 
