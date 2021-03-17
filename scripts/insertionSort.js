@@ -23,6 +23,9 @@ function insertionSort () {
 
 
                 div_sizes[j+1] = div_sizes[j]; //swap
+                //updating swap count
+                arraySwapCount++;
+                arraySwapCountUpdate(arraySwapCount);
 
 
                 div_update(divs[j], div_sizes[j], "red"); //size
@@ -35,6 +38,10 @@ function insertionSort () {
             }
         }
         div_sizes[j+1] = currentItem;
+        
+        //updating swap count
+        arraySwapCount++;
+        arraySwapCountUpdate(arraySwapCount);
         for(let k = 0; k < i; k++) {
             div_update(divs[k], div_sizes[k], "green");
         }

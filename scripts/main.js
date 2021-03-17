@@ -1,16 +1,38 @@
-const MAX = 350;
+const MAX = 700;
 const MIN = 5;
-var delayTime = 1;
 var divs = [];
 var div_sizes = [];
 var animations = [];
 var comparisonCount = 0;
+var arraySwapCount = 0;
 
 
 window.onreadystatechange = generateArray(300);
+
+//Initializing Onclick attributes for each list item
+
+document.getElementById("pickSelectionSort").onclick = () => {
+    document.getElementById("sortButton").innerHTML = '<button id = "sortButton" type="button" class="btn btn-primary" style="background-color: rgb(62,122,130);" onclick="startselectionSort()">Visualize Selection Sort!</button>';
+}
+document.getElementById("pickInsertionSort").onclick = () => {
+    document.getElementById("sortButton").innerHTML = '<button id = "sortButton" type="button" class="btn btn-primary" style="background-color: rgb(62,122,130);" onclick="startinsertionSort()">Visualize Insertion Sort!</button>'
+}
+document.getElementById("pickMergeSort").onclick = () => {
+    document.getElementById("sortButton").innerHTML = '<button id = "sortButton" type="button" class="btn btn-primary" style="background-color: rgb(62,122,130);" onclick="startmergeSort()">Visualize Merge Sort!</button>'
+}
+
+
+//Generates a new array based on the size
 function generateArray (arraySize) {
     comparisonCount = 0;
-    document.getElementById("counter").textContent = "Comparison Count = " + comparisonCount;
+    arraySwapCount = 0;
+
+    //updating Array Stats. 
+    document.getElementById("arraySize").textContent = "Array Size = " + arraySize;
+    document.getElementById("comparisonCounter").textContent = "Comparison Count = " + comparisonCount;
+    document.getElementById("arraySwapCounter").textContent = "Array Swaps = " + arraySwapCount;
+
+    
     divs = [];
     div_sizes = [];
     //let arraySize = document.querySelector("#arraySize").value;
@@ -25,12 +47,17 @@ function generateArray (arraySize) {
         divs[i].style = "height: " + randomNum + "px;"
         container.appendChild(divs[i]);
     }
-    delayTime=10000/(Math.floor(divs.length/10)*250);   
-    console.log(document.getElementById("counter").textContent)
+    delayTime=10000/(Math.floor(divs.length/10)*250);        //Decrease numerator to increase speed.
+
+    console.log(document.getElementById("comparisonCounter").textContent)
 }
 
+//This function is called from the Create Array button that allows you to input size. MAX SIZE = 450
 function updateArraySize() {
-    arraySize = document.getElementById("arraySize").value;
+    arraySize = document.getElementById("arrayInputSize").value;
+    if (arraySize > 450) {
+        arraySize = 450;
+    }
     generateArray(arraySize);
 }
 
@@ -41,9 +68,14 @@ function arrayFinisher () {
     }
 }
 
+
+//Randomly changes each element's size 
 function randomizeCurrent() {
     comparisonCount = 0;
-    document.getElementById("counter").textContent = "Comparison Count = " + comparisonCount;
+    arraySwapCount = 0;
+    document.getElementById("comparisonCounter").textContent = "Comparison Count = " + comparisonCount;
+    document.getElementById("arraySwapCounter").textContent = "Array Swaps = " + arraySwapCount;
+
     for(let i = 0; i < divs.length; i++) {
         let randomNum = generateRandom();
         div_sizes[i] = randomNum;
@@ -56,6 +88,7 @@ function generateRandom () {
 
 }
 
+//for debugging purposes to make sure the sorting algorithm works
 function confirmSort () {
     console.log(div_sizes);
     for(let i = 1; i < div_sizes.length; i++) {

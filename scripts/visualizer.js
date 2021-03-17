@@ -11,6 +11,13 @@ function div_update(myElement,height,color) {
 
 function comparisonCountUpdate(currentCount) {
     setTimeout(function(){
-        document.getElementById("counter").textContent = "Comparison Count = " + currentCount;
+        document.getElementById("comparisonCounter").textContent = "Comparison Count = " + currentCount;
     },c_delay+=delayTime);
 }
+
+function arraySwapCountUpdate(currentCount) {
+    setTimeout(function(){
+        document.getElementById("arraySwapCounter").textContent = "Array Swaps = " + currentCount;
+    },c_delay+=delayTime);
+}
+  

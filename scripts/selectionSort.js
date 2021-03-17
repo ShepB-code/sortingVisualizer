@@ -28,7 +28,15 @@ function selectionSort () {
         if(min_index!=i) {
             var temp=div_sizes[min_index];
             div_sizes[min_index]=div_sizes[i];
+
+            //updating swap count
+            arraySwapCount++;
+            arraySwapCountUpdate(arraySwapCount);
             div_sizes[i]=temp;
+
+            //updating swap count
+            arraySwapCount++;
+            arraySwapCountUpdate(arraySwapCount);
 
             div_update(divs[min_index],div_sizes[min_index],"red");//Height update
             div_update(divs[i],div_sizes[i],"red");//Height update
