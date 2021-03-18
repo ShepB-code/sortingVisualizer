@@ -15,12 +15,6 @@
             display: inline-block;
             background-color: rgb(181,234,240);
         }
-
-        #arrayBase {
-            width: 100%;
-            height: 150px;
-            background-color: rgb(181,234,240);
-        }
         #arrayBody {
             width: 100%;
             height: 70%;
@@ -28,6 +22,14 @@
             text-align: center;
             background-color: rgb(147,210,217);
         }
+
+        #arrayBase {
+            width: 100%;
+            height: 150px;
+            background-color: rgb(181,234,240);
+            display: inline-block;
+        }
+        
         .sortingButtons {
             color: white;
             background-color: blue;
@@ -37,7 +39,6 @@
             margin-left: 15px;
             margin-right: 15px;
             cursor: pointer;
-        
         }
 
     
@@ -67,9 +68,10 @@
             display: inline-block;
         }
 
-        .arrayStats {
+        .sortingStats {
             color: rgb(62,122,130);
             margin-left: 5%;
+            display: inline-block;
         }
     </style>
 
@@ -80,7 +82,7 @@
     <div id=toolBar>
         <!--Main sorting button. Inizialized with no onclick attribute since it will be filled once a user selects an algorithm from the drop down-->
         <div id="sortButton" style="display: inline-block;">
-            <button type="button" class="btn btn-primary" style="background-color: rgb(62,122,130);">Visualize!</button>
+            <button type="button" class="btn btn-primary disabled" style="background-color: rgb(62,122,130);">Visualize!</button>
         </div>
         <div class="seperator"></div>
         <!--Dropdown menu to select different algorithms-->
@@ -107,9 +109,16 @@
         
     </div>
     <div id=arrayBase>
-        <div class="arrayStats" id="arraySize">Array Size = 300</div>
-        <div class="arrayStats" id="comparisonCounter">Comparison Count = 0</div>
-        <div class="arrayStats" id="arraySwapCounter">Array Swaps = 0</div>
+        <div class="sortingStats" >
+            <p id="arraySize">Array Size = 300</p>
+            <p id="comparisonCounter">Comparison Count = 0</p>
+            <p id="arraySwapCounter">Array Swaps = 0</p>
+        </div>
+        <div class="seperator"></div>
+        <div class="sortingStats" >
+            <p id="algorithmType">Algorithm Type: </p>
+            <p id="algorithmBigO">Algorithm Big(O): </p>
+        </div>
 
     </div>
     

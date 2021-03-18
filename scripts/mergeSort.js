@@ -1,15 +1,17 @@
 
 function startmergeSort() {
-   // delayTime = 2;
+    resetCounters();
+    updateAlgorithmInfo("mergeSort");
+    disableButtons();
     mergeSort(div_sizes, 0, div_sizes.length - 1);
-    arrayFinisher();
+    arrayFinisher();   
+    enableButtons();
     c_delay = 0;
-    
+
 }
 
 function mergeSort(array, lowIndex, topIndex) {
-    
-    
+
     if(lowIndex < topIndex) {
         let middleIndex = Math.floor((topIndex+lowIndex) / 2);
         mergeSort(array, Number(lowIndex), Number(middleIndex));
@@ -38,8 +40,6 @@ function doMerge (array, lowIndex, middleIndex, topIndex) {
         comparisonCount++;
         comparisonCountUpdate(comparisonCount);
         if(tmpArray[lowPointer] <= tmpArray[highPointer]) {
-            //console.log("Changing " +array[correctLoc] + "to " + tmpArray[lowPointer]);
-
             array[correctLoc] = tmpArray[lowPointer];
             
             //updating swap count
@@ -51,7 +51,6 @@ function doMerge (array, lowIndex, middleIndex, topIndex) {
             correctLoc++;
             lowPointer++;
         } else {
-            //console.log("Changing " +array[correctLoc] + "to " + tmpArray[highPointer]);
             array[correctLoc] = tmpArray[highPointer];
 
             //updating swap count
@@ -65,7 +64,6 @@ function doMerge (array, lowIndex, middleIndex, topIndex) {
         //[3, 2, 3, 5] -> [3, 2] and [3, 5] [2, 3] and [3, 5]
     }
     while (lowPointer <= middleIndex){
-        console.log("Changing " +array[correctLoc] + "to " + tmpArray[lowPointer]);
         array[correctLoc] = tmpArray[lowPointer];
         
         //updating swap count

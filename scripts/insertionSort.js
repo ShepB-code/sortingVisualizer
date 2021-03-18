@@ -1,7 +1,12 @@
 function startinsertionSort () {
+    resetCounters();
+    updateAlgorithmInfo("insertionSort");
+    disableButtons();
     insertionSort();
     arrayFinisher();
+    enableButtons();
     c_delay = 0;
+    
 }
 
 function insertionSort () {

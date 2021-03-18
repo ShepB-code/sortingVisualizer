@@ -63,6 +63,8 @@ function updateArraySize() {
 
 //colors the finished array purple
 function arrayFinisher () {
+
+    delayTime = 5;
     for(let i = 0; i < divs.length; i++) {
         div_update(divs[i], div_sizes[i], "purple");
     }
@@ -86,6 +88,35 @@ function randomizeCurrent() {
 function generateRandom () {
     return Math.floor((MAX-MIN)*Math.random() + MIN);
 
+}
+
+function disableButtons () {
+    var buttons = document.getElementsByTagName("button");
+
+    for(let i = 0; i < buttons.length; i++) {
+        buttons[i].disabled = true;
+    }
+}
+
+function resetCounters () {
+    comparisonCount = 0;
+    arraySwapCount = 0;
+    document.getElementById("comparisonCounter").textContent = "Comparison Count = " + comparisonCount;
+    document.getElementById("arraySwapCounter").textContent = "Array Swaps = " + arraySwapCount;
+}
+function updateAlgorithmInfo(algorithmName) {
+    if(algorithmName == "mergeSort") {
+        document.getElementById("algorithmType").innerHTML = "Algorithm Type: Comparison Sort";
+        document.getElementById("algorithmBigO").innerHTML = "Algorithm Big(O): O(nlog(n))";
+    }
+    else if(algorithmName == "selectionSort") {
+        document.getElementById("algorithmType").innerHTML = "Algorithm Type: Comparison Sort";
+        document.getElementById("algorithmBigO").innerHTML = "Algorithm Big(O): O(n^2)";
+    }
+    else if(algorithmName == "insertionSort") {
+        document.getElementById("algorithmType").innerHTML = "Algorithm Type: Comparison Sort";
+        document.getElementById("algorithmBigO").innerHTML = "Algorithm Big(O): O(n^2)";
+    }
 }
 
 //for debugging purposes to make sure the sorting algorithm works

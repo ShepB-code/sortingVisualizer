@@ -1,8 +1,11 @@
 function startselectionSort () {
+    resetCounters();
+    updateAlgorithmInfo("selectionSort");
+    disableButtons();
     selectionSort();
     arrayFinisher();
+    enableButtons();
     c_delay = 0;
-    
 }
 
 function selectionSort () {
