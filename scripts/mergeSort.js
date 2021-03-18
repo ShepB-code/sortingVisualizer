@@ -1,5 +1,6 @@
 
 function startmergeSort() {
+    delayTime=10000/(Math.floor(divs.length/10)*250);
     resetCounters();
     updateAlgorithmInfo("mergeSort");
     disableButtons();
